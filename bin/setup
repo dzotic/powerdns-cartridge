@@ -6,3 +6,11 @@ yum install mysql mysql-server -y
 chkconfig --levels 235 mysqld on
 
 service mysqld start
+
+/usr/bin/mysqladmin -u root -h localhost password 'password'
+
+rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
+yum install pdns pdns-backend-mysql
+
