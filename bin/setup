@@ -1,1 +1,8 @@
 
+#!/usr/bin/env bash
+
+yum install mysql mysql-server -y
+
+chkconfig --levels 235 mysqld on
+
+service mysqld start
