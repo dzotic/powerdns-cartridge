@@ -1,17 +1,17 @@
-Name: iredmail
-Cartridge-Short-Name: iRedMail
-Display-Name: iRedMail
-Description: "Jelastic iRedMail"
-Version: '0.8.7'
+Name: powerdns
+Cartridge-Short-Name: PowerDNS
+Display-Name: PowerDNS
+Description: "Jelastic PowerDNS"
+Version: '3.6.1'
 License: 'Apache licence'
 License-Url: 
 Vendor: Eclipse
-Cartridge-Version: 0.8.7
+Cartridge-Version: 3.6.1
 Cartridge-Vendor: Jelastic
 Categories:
   - service
   - embedded
-Source-Url: https://github.com/dzotic/iredmail-cartridge.git
+Source-Url: https://github.com/dzotic/powerdns-cartridge.git
 Website: http://jelastic.com/
 Help-Topics:
   "Developer Center": https://jelastic.com
@@ -32,7 +32,7 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - iredmail-0.8.7
+  - powerdns-3.6.1
 Scaling:
   Min: 3
   Max: 6
