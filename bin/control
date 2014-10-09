@@ -14,6 +14,8 @@ BINARYPATH=/opt/repo/versions/3.6.1
 SBINARYPATH=/opt/repo/versions/3.6.1
 SOCKETPATH=/opt/repo/versions/3.6.1
 
+
+setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
 pdns_server=$SBINARYPATH/pdns_recursor
 
 [ -f "$pdns_server" ] || exit 0
