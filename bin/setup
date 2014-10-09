@@ -100,4 +100,8 @@ case "$1" in
 	;;
 esac
 
-
+$pdns_server --daemon 
+if test "$?" = "0"
+then
+	echo "started"	
+fi
