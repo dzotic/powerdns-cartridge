@@ -9,10 +9,10 @@ setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
 sed -ie 's|allow-from=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 192.168.0.0/16, 172.16.0.0/12, ::1/128, fe80::/10|0.0.0.0/0|g' /opt/repo/versions/3.6.1/powerdns/recursor.conf;
 
 
-sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 rpm -ivh /opt/repo/versions/3.6.1/poweradmin/epel-release-6-8.noarch.rpm
 yum -y install php-pdo
 yum -y install php-mcrypt
+sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
  service mysql start
 /usr/bin/mysqladmin -u root password 'password'
  service httpd start
