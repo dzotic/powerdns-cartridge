@@ -7,4 +7,4 @@ setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
 
 sed -ie 's|allow-from=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 192.168.0.0/16, 172.16.0.0/12, ::1/128, fe80::/10|0.0.0.0/0|g' /opt/repo/versions/3.6.1/powerdns/recursor.conf;
 
-/usr/bin/mysqladmin -u root password 'password'
+/usr/bin/mysqladmin -u root password 'password';
