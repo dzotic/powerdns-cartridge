@@ -13,6 +13,6 @@ sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 rpm -ivh /opt/repo/versions/3.6.1/poweradmin/epel-release-6-8.noarch.rpm
 yum -y install php-pdo
 yum -y install php-mcrypt
- service mysqld start
+ service mysql start
 /usr/bin/mysqladmin -u root password 'password'
  service httpd start
