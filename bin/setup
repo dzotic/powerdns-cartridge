@@ -14,6 +14,6 @@ yum -y install php-pdo
 yum -y install php-mcrypt
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
  service mysqld start
-/usr/bin/mysqladmin -u root -h localhost password '-new-password'
+/usr/bin/mysqladmin -u root -h localhost password 'new-password'
  service httpd start
 service cartridge start
