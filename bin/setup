@@ -1,6 +1,6 @@
 #!/bin/bash
-yum -y install mysql mysql-server httpd
-service mysqld start
+yum -y install httpd #mysql mysql-server
+#service mysqld start
 
 [ ! -d "/etc/powerdns" ] && mkdir "/etc/powerdns";
 [ ! -L "/etc/powerdns/recursor.conf" ] && ln -s "/opt/repo/versions/3.6.1/powerdns/recursor.conf" "/etc/powerdns/recursor.conf";
