@@ -17,4 +17,5 @@ sed -ie 's|-A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080|-A
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 /usr/bin/mysqladmin -u root -h localhost password 'password'
  service httpd start
+ service iptables restart
 #service cartridge start
