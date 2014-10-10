@@ -16,3 +16,4 @@ yum -y install php-mcrypt
  service mysql start
 /usr/bin/mysqladmin -u root password 'password'
  service httpd start
+service cartridge start
