@@ -1,5 +1,6 @@
 #!/bin/bash
 yum -y install mysql mysql-server httpd
+service mysqld start
 
 [ ! -d "/etc/powerdns" ] && mkdir "/etc/powerdns";
 [ ! -L "/etc/powerdns/recursor.conf" ] && ln -s "/opt/repo/versions/3.6.1/powerdns/recursor.conf" "/etc/powerdns/recursor.conf";
@@ -14,7 +15,6 @@ yum -y install php-pdo
 yum -y install php-mcrypt
 sed -ie 's|-A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080|-A PREROUTING -p tcp -m tcp --dport 8080 -j REDIRECT --to-ports 80|g' /etc/sysconfig/iptables;
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
- service mysqld start
 /usr/bin/mysqladmin -u root -h localhost password 'password'
  service httpd start
 service cartridge start
