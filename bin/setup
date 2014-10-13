@@ -15,9 +15,9 @@ service mysqld start
 sed -ie 's|-A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080|-A PREROUTING -p tcp -m tcp --dport 8080 -j REDIRECT --to-ports 80|g' /etc/sysconfig/iptables;
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 /usr/bin/mysqladmin -u root -h localhost password 'password'
-mysql -u root -p powerdns < /opt/repo/versions/3.6.1/poweradmin/sql/poweradmin-mysql-update-to-2.1.6.sql << EOF
-password
-EOF
+mysql -u root -ppassword -e "CREATE DATABASE powerdns;"
+mysql -u root -ppassword powerdns < /opt/repo/versions/3.6.1/poweradmin/sql/poweradmin-mysql-update-to-2.1.6.sql
+mysql -u root -ppassword powerdns < /opt/repo/versions/3.6.1/poweradmin/sql/powerdns-mysql-db-structure.sql
 
 setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
  service httpd start
