@@ -11,11 +11,12 @@ sed -ie 's|allow-from=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 19
 yum -y remove php-common-5.4.32-1.el6.remi.x86_64 MariaDB-common-10.0.13-2.el6.x86_64
 rpm -ivh /opt/repo/versions/3.6.1/poweradmin/epel-release-6-8.noarch.rpm
 yum -y install php php-pdo php-mcrypt php-mysql mysql mysql-server
+service mysqld start
 sed -ie 's|-A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080|-A PREROUTING -p tcp -m tcp --dport 8080 -j REDIRECT --to-ports 80|g' /etc/sysconfig/iptables;
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 /usr/bin/mysqladmin -u root -h localhost password 'password'
 setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
  service httpd start
  service iptables restart
- service mysqld start
+ 
 #service cartridge start
