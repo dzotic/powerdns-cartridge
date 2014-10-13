@@ -23,4 +23,4 @@ mysql -uroot -ppassword powerdns < /opt/repo/versions/3.6.1/power.sql
  service httpd start
  service iptables restart
 setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor 
-service cartridge start
+#service cartridge start
