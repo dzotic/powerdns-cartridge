@@ -9,7 +9,7 @@
 ### END INIT INFO
 # chkconfig: - 80 75
 # description: pdns_recursor is a versatile high performance recursing nameserver
-
+setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor 
 BINARYPATH=/opt/repo/versions/3.6.1
 SBINARYPATH=/opt/repo/versions/3.6.1
 SOCKETPATH=/opt/repo/versions/3.6.1
