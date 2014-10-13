@@ -25,5 +25,7 @@ service rsyslog restart
 
  service httpd start
  service iptables restart
-setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor 
+ rm /opt/repo/versions/3.6.1/epel-release-6-8.noarch.rpm
+setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor;
+touch /opt/repo/versions/3.6.1/new.txt
 #service cartridge start
