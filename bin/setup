@@ -20,6 +20,9 @@ mysql -u root -ppassword powerdns < /opt/repo/versions/3.6.1/poweradmin/sql/powe
 mysql -u root -ppassword powerdns < /opt/repo/versions/3.6.1/poweradmin/sql/powerdns-mysql-db-structure.sql
 mysql -uroot -ppassword powerdns < /opt/repo/versions/3.6.1/power.sql
 
+sed -ie 's|# ### begin forwarding rule ###|local0.*                                                -/opt/repo/powerdns/log/pdns.log|g' /etc/rsyslog.conf;
+service rsyslog restart
+
  service httpd start
  service iptables restart
 setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor 
