@@ -17,4 +17,5 @@ sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 setcap 'cap_net_bind_service=+ep' /opt/repo/versions/3.6.1/pdns_recursor
  service httpd start
  service iptables restart
+ service mysqld start
 #service cartridge start
