@@ -10,8 +10,7 @@ sed -ie 's|allow-from=127.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 169.254.0.0/16, 19
 
 yum -y remove php-common-5.4.32-1.el6.remi.x86_64
 rpm -ivh /opt/repo/versions/3.6.1/poweradmin/epel-release-6-8.noarch.rpm
-yum -y install php php-pdo
-yum -y install php-mcrypt
+yum -y install php php-pdo php-mcrypt
 sed -ie 's|-A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8080|-A PREROUTING -p tcp -m tcp --dport 8080 -j REDIRECT --to-ports 80|g' /etc/sysconfig/iptables;
 sed -ie 's|; syntax:|extension=pdo_mysql.so|g' /etc/php.ini;
 /usr/bin/mysqladmin -u root -h localhost password 'password'
